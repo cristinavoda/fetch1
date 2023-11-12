@@ -1,0 +1,19 @@
+function starWars() {
+  // en el fetch escribimos la url de la petición. El recurso que quiero ir a buscar.
+  // Cómo este fetch tardará un poco, tenemos que tratarlo con un .then()
+  // La response del .then no viene en formato json, así que tenemos que transformarla.
+  // Este proceso de transformación también tardará en procesarse, por eso tenemos que añadir un segundo .then().
+  fetch("https://swapi.dev/api/people/1/")
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+}
+
+
+async function request() {
+    const response = await fetch("https://swapi.dev/api/people/14/");
+    const data = await response.json()
+    console.log(data)
+}
+
+request()
